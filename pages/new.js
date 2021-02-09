@@ -1,4 +1,6 @@
 const Prism = require('prismjs');
+const loadLanguages = require('prismjs/components/');
+loadLanguages(['base']);
 import { UI, Editor, Result, Text } from '../styles/styles.js'
 
 function placeCaretAtEnd(el) {
@@ -18,9 +20,6 @@ function placeCaretAtEnd(el) {
         textRange.select();
     }
 }
-
-
-
 
 export default function New() {
     return (
@@ -42,7 +41,7 @@ export default function New() {
                     <Editor spellCheck="false" contentEditable="true" id="editor" onInput={event => {
                         const divElement = event.target;
                         const code = divElement.innerText;
-                        console.log(Prism.languages.javascript)
+                        console.log(Prism.languages.base)
                         // console.log(Prism.highlight(code, Prism.languages.base, 'base'))
                         // placeCaretAtEnd(divElement)
                     }}></Editor>
